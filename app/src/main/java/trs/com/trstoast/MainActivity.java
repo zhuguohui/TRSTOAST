@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import trs.com.trstoast.view.TRSToast;
+import trs.com.trstoast.view.SlideToast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     int n=1;
@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        TRSToast.MakeText(this,"第"+n+"次show").show();
+        SlideToast.MakeText(this, "第" + n + "次show").show();
         n++;
     }
 }

@@ -18,9 +18,10 @@ import java.lang.reflect.Field;
 import trs.com.trstoast.R;
 
 /**
+ * 可以滑动删除的Toast
  * Created by 朱国辉 on 2016/4/25.
  */
-public class TRSToast implements View.OnTouchListener {
+public class SlideToast implements View.OnTouchListener {
 
     //显示的时长，应该可以多态设置，不过我懒不想再抽取了。
     private static final long SHOW_TIME = 2000;
@@ -29,7 +30,7 @@ public class TRSToast implements View.OnTouchListener {
     private final View mToastView;
 
     private final TextView mTextView;
-    private static TRSToast mToast;
+    private static SlideToast mToast;
     private WindowManager.LayoutParams mParams;
     private static final int MSG_SHOW = 1;
     private static final int MSG_HIDE = 2;
@@ -75,7 +76,7 @@ public class TRSToast implements View.OnTouchListener {
         }
     }
 
-    private TRSToast(Context context, String text) {
+    private SlideToast(Context context, String text) {
 
         mIsShow = false;//记录当前Toast的内容是否已经在显示
         mWdm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
@@ -111,12 +112,12 @@ public class TRSToast implements View.OnTouchListener {
 
     }
 
-    public static TRSToast MakeText(Context context, String text) {
+    public static SlideToast MakeText(Context context, String text) {
         //如果没有Toast则实例化
         if (mToast == null) {
             //获取状态栏高度
             sStateBarHight = getStateBarHight(context);
-            mToast = new TRSToast(context, text);
+            mToast = new SlideToast(context, text);
         } else {
             mToast.setText(text);
         }
