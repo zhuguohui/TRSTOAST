@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="#cc000000"
+    android:orientation="vertical">
+    <TextView
+        android:paddingTop="10dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/tv_info"
+
+        android:text="test"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
