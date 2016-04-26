@@ -84,6 +84,7 @@ public class SlideToast implements View.OnTouchListener {
         mToastView = View.inflate(context, R.layout.layout_toast, null);
         mTextView = (TextView) mToastView.findViewById(R.id.tv_info);
         mTextView.setText(text);
+        //设置touch监听
         mToastView.setOnTouchListener(this);
         //获取屏幕宽度
         mScreenWidth = context.getResources().getDisplayMetrics().widthPixels;
@@ -98,7 +99,7 @@ public class SlideToast implements View.OnTouchListener {
         mParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
         mParams.format = PixelFormat.TRANSLUCENT;
         mParams.windowAnimations = R.style.anim_view;//设置进入退出动画效果
-        mParams.type = WindowManager.LayoutParams.TYPE_SYSTEM_ALERT;
+        mParams.type = WindowManager.LayoutParams.TYPE_TOAST;
         //
         mParams.flags = WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL
                 | WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
